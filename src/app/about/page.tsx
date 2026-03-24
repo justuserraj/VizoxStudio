@@ -11,17 +11,18 @@ export default function AboutPage() {
       <main className="flex-1 pt-32 pb-24 min-h-screen">
         <div className="container px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-            <div className="order-2 lg:order-1 relative rounded-[24px] overflow-hidden aspect-[4/5] shadow-2xl">
-              <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10" />
-              <Image 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000" 
-                alt="Our Team"
-                fill
-                className="object-cover"
-              />
+            <div className="order-2 lg:order-1 relative rounded-[24px] overflow-hidden aspect-[4/5] shadow-2xl border border-border bg-surface">
+              <div className="absolute inset-0 bg-primary/5 z-10" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-center">
+                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20">
+                  <span className="font-serif text-3xl font-bold text-primary">V.</span>
+                </div>
+                <h3 className="text-white font-serif text-2xl font-bold mb-3">Team photo coming soon</h3>
+                <p className="text-muted-foreground text-base max-w-[280px]">We're currently busy building high-performance systems for our clients.</p>
+              </div>
             </div>
             <div className="order-1 lg:order-2 space-y-8">
-              <span className="px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wide uppercase">
+              <span className="px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-[#A78BFF] text-sm font-medium tracking-wide uppercase">
                 About Vizox Studio
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight">
@@ -36,12 +37,12 @@ export default function AboutPage() {
               
               <div className="grid grid-cols-2 gap-8 pt-6 border-t border-border">
                 <div>
-                  <h4 className="text-4xl font-serif font-bold text-white mb-2">50+</h4>
+                  <h4 className="text-4xl font-serif font-bold text-white mb-2">5+</h4>
                   <p className="text-muted-foreground">Projects Delivered</p>
                 </div>
                 <div>
-                  <h4 className="text-4xl font-serif font-bold text-white mb-2">15+</h4>
-                  <p className="text-muted-foreground">Industry Awards</p>
+                  <h4 className="text-4xl font-serif font-bold text-white mb-2">4+</h4>
+                  <p className="text-muted-foreground">Years Experience</p>
                 </div>
               </div>
             </div>

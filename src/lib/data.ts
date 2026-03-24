@@ -30,7 +30,7 @@ export const PORTFOLIO_ITEMS: Project[] = [
     title: "Coffee Roast",
     context: "A premium coffee brand scaling its direct-to-consumer digital presence.",
     category: "Digital Transformation",
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1000",
+    image: "/images/Pic/coffeeroastsite/coffeeroastsite.netlify.app [1].png",
     alt: "Coffee Roast brand digital presence",
     caseStudy: {
       businessOverview: "Coffee Roast is a premium coffee roastery looking to bridge the gap between their high-quality physical products and their online customer experience.",
@@ -72,7 +72,7 @@ export const PORTFOLIO_ITEMS: Project[] = [
     title: "Mazaqal Reef Bakery",
     context: "An artisanal bakery transitioning from traditional walk-ins to a digital-first customer approach.",
     category: "Business Digitization",
-    image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=1000",
+    image: "/images/Pic/mazaqalreefbakery/mazaqalreefbakery.netlify.app [1].png",
     alt: "Mazaqal Reef Bakery digital identity",
     caseStudy: {
       businessOverview: "Mazaqal Reef Bakery is a established local producer of artisanal baked goods seeking to expand their reach beyond physical foot traffic.",

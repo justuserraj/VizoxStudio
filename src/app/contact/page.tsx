@@ -184,10 +184,10 @@ export default function ContactPage() {
                               {...field}
                             >
                               <option value="" disabled>Select a range</option>
-                              <option value="<5k">Less than $5,000</option>
-                              <option value="5k-15k">$5,000 - $15,000</option>
-                              <option value="15k-30k">$15,000 - $30,000</option>
-                              <option value=">30k">$30,000+</option>
+                              <option value="25k-75k">₹25K – ₹75K / ~$300 – $900</option>
+                              <option value="75k-2l">₹75K – ₹2L / ~$900 – $2.5K</option>
+                              <option value="2l-5l">₹2L – ₹5L / ~$2.5K – $6K</option>
+                              <option value=">5l">₹5L+ / ~$6K+</option>
                             </select>
                           </FormControl>
                           <FormMessage />

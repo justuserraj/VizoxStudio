@@ -62,7 +62,7 @@ export function Navbar() {
         </nav>
         <div className="hidden md:flex items-center gap-4">
           <Button asChild className="rounded-[12px]">
-            <Link href="/contact">Get a Free Growth Audit</Link>
+            <Link href="/portfolio">View Our Work</Link>
           </Button>
         </div>
         
@@ -71,6 +71,7 @@ export function Navbar() {
           variant="ghost" 
           size="icon" 
           className="md:hidden relative z-50 text-white"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? (
@@ -112,7 +113,7 @@ export function Navbar() {
                     </Link>
                   ))}
                   <Button asChild className="w-full h-14 text-lg rounded-[16px] mt-4 shadow-[0_0_20px_rgba(124,77,255,0.4)]">
-                    <Link href="/contact" onClick={() => setIsMenuOpen(false)}>Get a Free Growth Audit</Link>
+                    <Link href="/portfolio" onClick={() => setIsMenuOpen(false)}>View Our Work</Link>
                   </Button>
                 </nav>
               </motion.div>

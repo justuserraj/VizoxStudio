@@ -26,10 +26,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground mb-4 max-w-sm">
-              Vizox Studio — Building digital systems that turn businesses into scalable brands
-            </p>
-            <p className="text-muted-foreground mb-8 max-w-sm">
-              Ideas that Inspire. Code that Performs. We are a creative digital agency specializing in branding, development, and digital marketing.
+              Vizox Studio — Building digital systems that turn businesses into scalable brands.
             </p>
             <Button asChild variant="outline">
               <Link href="/contact">Get in Touch</Link>

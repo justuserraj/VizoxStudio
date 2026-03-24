@@ -44,13 +44,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <div className="relative overflow-hidden rounded-[16px] mb-6 aspect-square shadow-lg border border-border/50 bg-surface">
           {/* Information Overlay */}
           <div className="absolute inset-0 bg-primary/80 backdrop-blur-md z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-8 text-center">
-            <motion.h4 
+            <motion.h3 
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               className="text-white font-serif text-3xl font-bold tracking-wide mb-3"
             >
               {project.title}
-            </motion.h4>
+            </motion.h3>
             <p className="text-white/90 text-sm mb-8 leading-relaxed max-w-[280px]">
               {project.context}
             </p>
@@ -73,7 +73,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
         <div>
           <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-          <p className="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-3">{project.category}</p>
+          <p className="text-[#A78BFF] text-xs font-bold uppercase tracking-[0.2em] mb-3">{project.category}</p>
           <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2">{project.context}</p>
         </div>
       </div>
@@ -100,6 +100,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               <button 
                 onClick={() => setIsModalOpen(false)}
                 className="absolute top-8 right-8 z-50 p-2.5 rounded-full bg-background/50 border border-border text-white hover:bg-primary hover:border-primary transition-all duration-300"
+                aria-label="Close modal"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -132,24 +133,29 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                       <button 
                         onClick={(e) => { e.stopPropagation(); prevSlide(); }}
                         className="absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white backdrop-blur-xl transition-all opacity-0 group-hover/gallery:opacity-100"
+                        aria-label="Previous image"
                       >
                         <ChevronLeft className="w-6 h-6" />
                       </button>
                       <button 
                         onClick={(e) => { e.stopPropagation(); nextSlide(); }}
                         className="absolute right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white backdrop-blur-xl transition-all opacity-0 group-hover/gallery:opacity-100"
+                        aria-label="Next image"
                       >
                         <ChevronRight className="w-6 h-6" />
                       </button>
                       
                       {/* Dots */}
-                      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2.5">
+                      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-1">
                         {project.caseStudy.screenshots.map((_, i) => (
                           <button
                             key={i}
                             onClick={(e) => { e.stopPropagation(); setCurrentSlide(i); }}
-                            className={`h-1.5 rounded-full transition-all duration-500 ${i === currentSlide ? 'w-8 bg-primary' : 'w-1.5 bg-white/20'}`}
-                          />
+                            aria-label={`Go to image ${i + 1}`}
+                            className="p-3 group"
+                          >
+                            <div className={`h-1.5 rounded-full transition-all duration-500 ${i === currentSlide ? 'w-8 bg-primary' : 'w-1.5 bg-white/20 group-hover:bg-white/40'}`} />
+                          </button>
                         ))}
                       </div>
                     </>
@@ -161,7 +167,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   <div className="mb-10">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="h-px w-8 bg-primary" />
-                      <span className="text-primary font-bold uppercase tracking-[0.2em] text-xs">{project.category}</span>
+                      <span className="text-[#A78BFF] font-bold uppercase tracking-[0.2em] text-xs">{project.category}</span>
                     </div>
                     <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 leading-tight">{project.title}</h2>
                     <p className="text-muted-foreground text-lg italic">{project.context}</p>

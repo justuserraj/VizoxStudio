@@ -10,8 +10,13 @@ import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PORTFOLIO_ITEMS } from "@/lib/data";
-import { ProjectCard } from "@/components/ProjectCard";
 import { cn } from "@/lib/utils";
+import dynamic from "next/dynamic";
+
+const ProjectCard = dynamic(() => import("@/components/ProjectCard").then((mod) => mod.ProjectCard), {
+  ssr: false,
+  loading: () => <div className="aspect-square rounded-[16px] bg-surface animate-pulse" />,
+});
 
 const GROWTH_SYSTEM = [
   {
@@ -163,6 +168,24 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Stats Bar */}
+        <section className="py-12 bg-background border-y border-border/50 relative z-10">
+          <div className="container px-6 max-w-7xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+              {[
+                { label: "Projects Delivered", value: "5+" },
+                { label: "Industries Served", value: "3" },
+                { label: "Client Retention", value: "100%" },
+              ].map((stat, idx) => (
+                <div key={idx} className="flex flex-col items-center text-center space-y-2">
+                  <span className="text-4xl md:text-5xl font-serif font-bold text-white">{stat.value}</span>
+                  <span className="text-muted-foreground uppercase tracking-widest text-xs font-bold">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* The Hidden Problem Section */}
         <section className="py-24 bg-surface relative z-10 border-b border-border/50">
           <div className="container px-6 max-w-4xl text-center">
@@ -231,6 +254,7 @@ export default function Home() {
               <div className="absolute top-1/2 -left-2 -translate-y-1/2 z-20">
                 <Button 
                   variant="ghost" size="icon" className="w-10 h-10 rounded-full bg-background/50 backdrop-blur-md border border-border"
+                  aria-label="Previous service"
                   onClick={() => handleManualAction(() => setExpertiseIndex((expertiseIndex - 1 + GROWTH_SYSTEM.length) % GROWTH_SYSTEM.length))}
                 >
                   <ChevronLeft className="w-6 h-6 text-white" />
@@ -239,6 +263,7 @@ export default function Home() {
               <div className="absolute top-1/2 -right-2 -translate-y-1/2 z-20">
                 <Button 
                   variant="ghost" size="icon" className="w-10 h-10 rounded-full bg-background/50 backdrop-blur-md border border-border"
+                  aria-label="Next service"
                   onClick={() => handleManualAction(() => setExpertiseIndex((expertiseIndex + 1) % GROWTH_SYSTEM.length))}
                 >
                   <ChevronRight className="w-6 h-6 text-white" />
@@ -284,16 +309,19 @@ export default function Home() {
                 </motion.div>
               </AnimatePresence>
               
-              <div className="flex justify-center gap-2 mt-10">
+              <div className="flex justify-center gap-1 mt-10">
                 {GROWTH_SYSTEM.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleManualAction(() => setExpertiseIndex(idx))}
-                    className={cn(
-                      "w-2 h-2 rounded-full transition-all duration-300",
+                    aria-label={`Go to service slide ${idx + 1}`}
+                    className="p-3 group"
+                  >
+                    <div className={cn(
+                      "w-2 h-2 rounded-full transition-all duration-300 group-hover:bg-primary/50",
                       expertiseIndex === idx ? "w-6 bg-primary" : "bg-border"
-                    )}
-                  />
+                    )} />
+                  </button>
                 ))}
               </div>
             </div>
@@ -334,6 +362,7 @@ export default function Home() {
               <div className="absolute top-1/2 -left-2 -translate-y-1/2 z-20">
                 <Button 
                   variant="ghost" size="icon" className="w-10 h-10 rounded-full bg-background/50 backdrop-blur-md border border-border"
+                  aria-label="Previous project"
                   onClick={() => handleManualAction(() => setWorkIndex((workIndex - 1 + featuredPortfolio.length) % featuredPortfolio.length))}
                 >
                   <ChevronLeft className="w-6 h-6 text-white" />
@@ -342,6 +371,7 @@ export default function Home() {
               <div className="absolute top-1/2 -right-2 -translate-y-1/2 z-20">
                 <Button 
                   variant="ghost" size="icon" className="w-10 h-10 rounded-full bg-background/50 backdrop-blur-md border border-border"
+                  aria-label="Next project"
                   onClick={() => handleManualAction(() => setWorkIndex((workIndex + 1) % featuredPortfolio.length))}
                 >
                   <ChevronRight className="w-6 h-6 text-white" />
@@ -371,16 +401,19 @@ export default function Home() {
                 </motion.div>
               </AnimatePresence>
               
-              <div className="flex justify-center gap-2 mt-10">
+              <div className="flex justify-center gap-1 mt-10">
                 {featuredPortfolio.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleManualAction(() => setWorkIndex(idx))}
-                    className={cn(
-                      "w-2 h-2 rounded-full transition-all duration-300",
+                    aria-label={`Go to project slide ${idx + 1}`}
+                    className="p-3 group"
+                  >
+                    <div className={cn(
+                      "w-2 h-2 rounded-full transition-all duration-300 group-hover:bg-primary/50",
                       workIndex === idx ? "w-6 bg-primary" : "bg-border"
-                    )}
-                  />
+                    )} />
+                  </button>
                 ))}
               </div>
             </div>
@@ -388,7 +421,7 @@ export default function Home() {
             {/* Visual Authority Work Nested Section */}
             <div className="mt-32 pt-16 border-t border-border/50">
               <div className="text-center mb-16">
-                <span className="px-5 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold tracking-[0.2em] uppercase mb-6 inline-block">
+                <span className="px-5 py-2 rounded-full border border-primary/30 bg-primary/10 text-[#A78BFF] text-xs font-bold tracking-[0.2em] uppercase mb-6 inline-block">
                   Visual Authority
                 </span>
                 <h3 className="text-2xl md:text-5xl font-serif font-bold text-white mb-6">Strategic Brand Identities</h3>
@@ -411,6 +444,7 @@ export default function Home() {
                       src={`/images/Logo%20%5BBranding%5D/${num}.png`} 
                       alt={`Brand Strategy Case ${num}`}
                       fill
+                      sizes="(max-w-640px) 150px, (max-w-1024px) 200px, 250px"
                       className="object-contain p-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.05)] group-hover:drop-shadow-[0_0_25px_rgba(124,77,255,0.4)] transition-all duration-500"
                     />
                   </motion.div>
@@ -432,7 +466,7 @@ export default function Home() {
               initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}
               className="mb-16 md:mb-24 text-center"
             >
-              <span className="px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wide uppercase mb-6 inline-block">
+              <span className="px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-[#A78BFF] text-sm font-medium tracking-wide uppercase mb-6 inline-block">
                 Testimonials
               </span>
               <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Client Stories</h2>
@@ -492,7 +526,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
                 <Button size="lg" className="h-14 px-8 text-lg w-full sm:w-auto shadow-[0_0_30px_rgba(124,77,255,0.3)]" asChild>
-                  <Link href="/contact">Get a Free Growth Audit</Link>
+                  <Link href="/contact">Talk to Us</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-primary/40 w-full sm:w-auto hover:bg-white/5" asChild>
                   <Link href="/contact">Schedule a Call</Link>
