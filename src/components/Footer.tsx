@@ -16,23 +16,25 @@ const LEGAL_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="bg-surface border-t border-border pt-16 pb-8">
+    <footer className="bg-surface/50 backdrop-blur-sm border-t border-border/30 pt-16 pb-8 relative z-10">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
-            <Link href="/" className="inline-block mb-6">
-              <span className="font-serif text-3xl font-bold tracking-tight text-white">
+            <Link href="/" className="inline-block mb-6 group">
+              <span className="font-serif text-3xl font-bold tracking-tight text-white group-hover:text-gradient-3d transition-all duration-300">
                 Vizox<span className="text-primary">.</span>
               </span>
             </Link>
-            <p className="text-muted-foreground mb-4 max-w-sm">
+            <p className="text-muted-foreground mb-4 max-w-sm leading-relaxed">
               Vizox Studio — Building digital systems that turn businesses into scalable brands.
             </p>
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" className="border-primary/30 hover:bg-primary/10">
               <Link href="/contact">Get in Touch</Link>
             </Button>
           </div>
-          
+
           <div>
             <h3 className="font-semibold text-white mb-6 uppercase tracking-wider text-sm">Links</h3>
             <ul className="space-y-4">
@@ -77,8 +79,8 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        
-        <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row items-center justify-between">
+
+        <div className="border-t border-border/30 pt-8 flex flex-col md:flex-row items-center justify-between">
           <p className="text-muted-foreground text-sm">
             &copy; {new Date().getFullYear()} Vizox Studio. All rights reserved.
           </p>
