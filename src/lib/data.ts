@@ -151,6 +151,7 @@ export const PORTFOLIO_ITEMS: Project[] = [
       businessImpact: "The result is a more professional brand perception and a significantly improved digital journey for their customers."
     }
   },
+  /*
   {
     slug: "hulk-gym",
     title: "Hulk Gym",
@@ -193,6 +194,7 @@ export const PORTFOLIO_ITEMS: Project[] = [
       businessImpact: "The gym now possesses a professional digital asset that actively supports their member acquisition goals and strengthens their local market position."
     }
   }
+  */
 ];
 
 export interface Service {

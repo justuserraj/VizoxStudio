@@ -72,10 +72,8 @@ const staggerContainer: Variants = {
 };
 
 export default function Home() {
-  const featuredPortfolio = PORTFOLIO_ITEMS.slice(0, 5);
   const [testimonialIndex, setTestimonialIndex] = React.useState(0);
   const [expertiseIndex, setExpertiseIndex] = React.useState(0);
-  const [workIndex, setWorkIndex] = React.useState(0);
   const timerRef = React.useRef<NodeJS.Timeout | null>(null);
   const [scrollY, setScrollY] = useState(0);
 
@@ -90,9 +88,8 @@ export default function Home() {
     timerRef.current = setInterval(() => {
       setTestimonialIndex((prev) => (prev + 1) % TESTIMONIALS.length);
       setExpertiseIndex((prev) => (prev + 1) % GROWTH_SYSTEM.length);
-      setWorkIndex((prev) => (prev + 1) % featuredPortfolio.length);
     }, 5000);
-  }, [featuredPortfolio.length]);
+  }, []);
 
   React.useEffect(() => {
     startTimer();
@@ -120,11 +117,6 @@ export default function Home() {
 
           <div className="container px-6 max-w-5xl relative z-10 text-center">
             <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="space-y-8">
-              <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-4">
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-sm text-muted-foreground font-medium tracking-wide">Premium Digital Agency</span>
-              </motion.div>
-
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -234,6 +226,57 @@ export default function Home() {
                 </p>
               </div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Short Process Section */}
+        <section className="py-24 relative z-10 border-b border-border/30">
+          <div className="container px-6 max-w-7xl">
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}
+              className="mb-16 text-center"
+            >
+              <span className="inline-block px-4 py-1.5 rounded-full glass text-primary text-sm font-medium tracking-wide uppercase mb-6">
+                Our Methodology
+              </span>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">How We Work</h2>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { step: "01", title: "Discovery", desc: "Uncovering growth opportunities through deep market research." },
+                { step: "02", title: "Strategy", desc: "Designing a data-driven blueprint for your digital authority." },
+                { step: "03", title: "Execution", desc: "Building high-performance systems engineered for scale." },
+                { step: "04", title: "Growth", desc: "Continuous optimization for predictable business results." },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                >
+                  <Card3D intensity={5}>
+                    <div className="p-8 rounded-[24px] glass-card h-full border border-white/5 hover:border-primary/30 transition-colors group">
+                      <div className="text-4xl font-serif font-bold text-primary/20 group-hover:text-primary/40 transition-colors mb-4">
+                        {item.step}
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </Card3D>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-16 text-center">
+              <Button variant="ghost" className="text-primary hover:text-white hover:bg-primary/10 transition-all group" asChild>
+                <Link href="/process" className="flex items-center gap-2">
+                  <span>Explore Our Detailed Process</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -362,150 +405,6 @@ export default function Home() {
                     )} />
                   </button>
                 ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Case Studies Section */}
-        <section className="py-24 md:py-32 relative z-10 border-b border-border/30">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-primary/5" />
-
-          <div className="container px-6 max-w-7xl relative z-10">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-6">
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-                <span className="inline-block px-4 py-1.5 rounded-full glass text-primary text-sm font-medium tracking-wide uppercase mb-6">
-                  Case Studies
-                </span>
-                <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-4">Strategic Business Cases</h2>
-                <p className="text-muted-foreground text-lg max-w-xl leading-relaxed">
-                  Explore how we help real businesses solve digital friction and establish a dominant market presence.
-                </p>
-              </motion.div>
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-                <GlowBorder className="rounded-full">
-                  <Button variant="outline" size="lg" className="h-12 px-8 rounded-full border-primary/40 text-primary hover:bg-primary hover:text-white transition-all font-bold" asChild>
-                    <Link href="/portfolio">View All Business Cases</Link>
-                  </Button>
-                </GlowBorder>
-              </motion.div>
-            </div>
-
-            {/* Desktop Grid */}
-            <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-              {featuredPortfolio.map((project, idx) => (
-                <motion.div
-                  key={idx}
-                  initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}
-                >
-                  <Suspense fallback={<div className="aspect-square rounded-[16px] glass-card animate-pulse" />}>
-                    <ProjectCard project={project} />
-                  </Suspense>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Mobile Carousel */}
-            <div className="md:hidden relative px-2">
-              <div className="absolute top-1/2 -left-2 -translate-y-1/2 z-20">
-                <Button
-                  variant="ghost" size="icon" className="w-10 h-10 rounded-full glass"
-                  aria-label="Previous project"
-                  onClick={() => handleManualAction(() => setWorkIndex((workIndex - 1 + featuredPortfolio.length) % featuredPortfolio.length))}
-                >
-                  <ChevronLeft className="w-6 h-6 text-white" />
-                </Button>
-              </div>
-              <div className="absolute top-1/2 -right-2 -translate-y-1/2 z-20">
-                <Button
-                  variant="ghost" size="icon" className="w-10 h-10 rounded-full glass"
-                  aria-label="Next project"
-                  onClick={() => handleManualAction(() => setWorkIndex((workIndex + 1) % featuredPortfolio.length))}
-                >
-                  <ChevronRight className="w-6 h-6 text-white" />
-                </Button>
-              </div>
-
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={workIndex}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  drag="x"
-                  dragConstraints={{ left: 0, right: 0 }}
-                  onDragEnd={(e, { offset, velocity }) => {
-                    const swipe = swipePower(offset.x, velocity.x);
-                    if (swipe < -10000) {
-                      handleManualAction(() => setWorkIndex((workIndex + 1) % featuredPortfolio.length));
-                    } else if (swipe > 10000) {
-                      handleManualAction(() => setWorkIndex((workIndex - 1 + featuredPortfolio.length) % featuredPortfolio.length));
-                    }
-                  }}
-                  className="touch-pan-y"
-                >
-                  <Suspense fallback={<div className="aspect-square rounded-[16px] glass-card animate-pulse" />}>
-                    <ProjectCard project={featuredPortfolio[workIndex]} />
-                  </Suspense>
-                </motion.div>
-              </AnimatePresence>
-
-              <div className="flex justify-center gap-1 mt-10">
-                {featuredPortfolio.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleManualAction(() => setWorkIndex(idx))}
-                    className="p-3 group"
-                    aria-label={`Go to project ${idx + 1}`}
-                  >
-                    <div className={cn(
-                      "w-2 h-2 rounded-full transition-all duration-300 group-hover:bg-primary/50",
-                      workIndex === idx ? "w-6 bg-primary" : "bg-border"
-                    )} />
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Visual Authority Section */}
-            <div className="mt-32 pt-16 border-t border-border/30">
-              <div className="text-center mb-16">
-                <span className="px-5 py-2 rounded-full glass text-white text-xs font-bold tracking-[0.2em] uppercase mb-6 inline-block">
-                  Visual Authority
-                </span>
-                <h3 className="text-2xl md:text-5xl font-serif font-bold text-white mb-6">Strategic Brand Identities</h3>
-                <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
-                  Establishing instant trust and credibility through high-end visual systems for established businesses.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center justify-items-center">
-                {[1, 2, 3, 4, 5, 6].map((num) => (
-                  <motion.div
-                    key={num}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: num * 0.1 }}
-                    className="relative w-full aspect-square rounded-[24px] glass-card group grayscale hover:grayscale-0 transition-all duration-500 hover:scale-[1.02] flex items-center justify-center overflow-hidden"
-                  >
-                    <Image
-                      src={`/images/Logo%20%5BBranding%5D/${num}.png`}
-                      alt={`Brand Strategy Case ${num}`}
-                      fill
-                      sizes="(max-w-640px) 150px, (max-w-1024px) 200px, 250px"
-                      className="object-contain p-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.05)] group-hover:drop-shadow-[0_0_25px_rgba(124,77,255,0.4)] transition-all duration-500"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-              <div className="mt-16 text-center">
-                <GlowBorder className="rounded-full inline-block">
-                  <Button variant="outline" size="lg" className="h-12 px-8 rounded-full border-primary/30 hover:bg-primary hover:text-white transition-all font-bold" asChild>
-                    <Link href="/services/brand-foundation">Explore Our Brand Strategy</Link>
-                  </Button>
-                </GlowBorder>
               </div>
             </div>
           </div>
