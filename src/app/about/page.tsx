@@ -111,7 +111,7 @@ export default function AboutPage() {
             >
               <span className="text-primary font-bold uppercase tracking-widest text-sm">Meet the Founder</span>
               <h2 className="text-3xl md:text-5xl font-serif font-bold text-white leading-tight">
-                "We build digital systems that turn businesses into <span className="text-gradient-3d">scalable brands.</span>"
+                "We build digital systems that turn ambitious ideas into <span className="text-gradient-3d">scalable brands and infrastructures.</span>"
               </h2>
               <p className="text-xl text-muted-foreground italic leading-relaxed">
                 "I started Vizox Studio after years of seeing businesses struggle with digital tools that felt cold and complicated. My vision was to create a studio that blends high-end engineering with soulful design — making the internet a more beautiful and functional place, one project at a time."

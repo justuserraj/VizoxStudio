@@ -23,19 +23,19 @@ const GROWTH_SYSTEM = [
   {
     slug: "brand-foundation",
     title: "Brand Foundation",
-    description: "Build trust and credibility instantly with visual systems that establish authority.",
+    description: "Build trust instantly with high-end Graphic Design and visual systems that establish authority.",
     icon: Paintbrush,
   },
   {
     slug: "digital-infrastructure",
     title: "Digital Infrastructure",
-    description: "Present your business professionally with high-performance digital systems.",
+    description: "Scalable Websites, Mobile Apps, and Custom Software built for high-performance business needs.",
     icon: Code2,
   },
   {
     slug: "growth-systems",
     title: "Growth Systems",
-    description: "Turn visitors into paying customers with conversion-first strategies.",
+    description: "Drive ROI through Professional Video Editing and Strategic Social Media Handling.",
     icon: TrendingUp,
   },
 ];
@@ -125,21 +125,21 @@ export default function Home() {
               >
                 Stop Losing Customers Because of{" "}
                 <br className="hidden md:block" />
-                <span className="text-gradient-3d">Bad Branding and Weak Websites</span>
+                <span className="text-gradient-3d">Weak Branding and Outdated Digital Systems</span>
               </motion.h1>
 
               <motion.p
                 variants={fadeIn}
                 className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
               >
-                We help businesses transform their digital presence into a system that consistently attracts and converts customers.
+                We empower visionaries and organizations to transform their digital presence into a powerful system through high-end design, custom software, and strategic content.
               </motion.p>
 
               <motion.p
                 variants={fadeIn}
                 className="text-base text-primary/80 max-w-2xl mx-auto leading-relaxed font-medium"
               >
-                Vizox Studio builds digital systems that turn businesses into scalable brands
+                Vizox Studio builds digital systems that turn ambitious ideas into scalable brands and infrastructures
               </motion.p>
 
               <motion.div variants={fadeIn} className="pt-8 flex items-center justify-center gap-4 flex-wrap">
@@ -202,27 +202,27 @@ export default function Home() {
 
         {/* The Hidden Problem Section */}
         <section className="py-24 relative z-10 border-b border-border/30 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/50 to-transparent" />
           <div className="container px-6 max-w-4xl text-center relative z-10">
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeIn}
             >
               <span className="inline-block px-4 py-1.5 rounded-full glass text-primary text-sm font-medium tracking-wide uppercase mb-6">
-                The Problem
+                The Challenge
               </span>
               <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">
-                Why Many Businesses Lose{" "}
+                Why Many Entities Lose{" "}
                 <br className="hidden md:block" />
-                Customers Online
+                Impact Online
               </h2>
               <p className="text-muted-foreground text-lg md:text-xl leading-relaxed mb-8 max-w-2xl mx-auto">
-                Many businesses lose potential customers online without realizing it. Weak branding, outdated websites, and poor digital positioning quietly push people away before they ever contact you.
+                Many organizations and ambitious individuals lose potential impact online without realizing it. Weak branding, lack of video authority, invisible social presence, and outdated software quietly push people away before they ever connect with you.
               </p>
               <div className="inline-block px-8 py-4 rounded-2xl glass-card animate-border-glow">
                 <p className="text-white font-serif text-xl md:text-2xl font-bold tracking-wide">
-                  Most businesses don't have a traffic problem.{" "}
+                  Most online presences don't have a traffic problem.{" "}
                   <br className="hidden md:block" />
-                  <span className="text-primary text-xl md:text-2xl">They have a conversion problem.</span>
+                  <span className="text-primary text-xl md:text-2xl">They have a resonance problem.</span>
                 </p>
               </div>
             </motion.div>
@@ -424,7 +424,7 @@ export default function Home() {
               </span>
               <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Client Stories</h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Hear from the businesses we've helped transform through strategy and design.
+                Hear from the visionaries and organizations we've helped transform through strategy and design.
               </p>
             </motion.div>
 

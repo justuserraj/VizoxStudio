@@ -22,14 +22,14 @@ const PROCESSES = [
   {
     step: "01",
     title: "Discovery",
-    desc: "We dive deep into your business model, target audience, and market landscape to identify untapped growth opportunities. This phase is about gathering high-signal data to ensure our solution aligns perfectly with your business goals.",
-    needs: "Business goals, target audience personas, and current pain points.",
+    desc: "We dive deep into your vision, target audience, and market landscape to identify untapped growth opportunities. This phase is about gathering high-signal data to ensure our solution aligns perfectly with your strategic objectives.",
+    needs: "Project goals, target audience personas, and current pain points.",
     receives: "Comprehensive Audit Report and Project Roadmap."
   },
   {
     step: "02",
     title: "Strategy",
-    desc: "We translate data into a strategic blueprint, defining the visual identity, user journey, and technical architecture. Every decision is data-driven, focused on establishing authority and maximizing conversion rates.",
+    desc: "We translate data into a strategic blueprint, defining the visual identity, user journey, and technical architecture. Every decision is data-driven, focused on establishing authority and maximizing resonance.",
     needs: "Brand values, preferred aesthetics, and technical constraints.",
     receives: "Strategic Design System and Technical Specification."
   },
@@ -37,13 +37,13 @@ const PROCESSES = [
     step: "03",
     title: "Execution",
     desc: "Our engineering team builds your digital system using high-performance technologies like Next.js. We focus on speed, security, and scalability, ensuring a flawless experience across all devices.",
-    needs: "Content assets (copy, images) and timely feedback on milestones.",
+    needs: "Content assets (copy, images, video) and timely feedback on milestones.",
     receives: "Fully Functional, Optimized Digital System."
   },
   {
     step: "04",
     title: "Growth",
-    desc: "We deploy the system and monitor performance metrics to ensure it delivers predictable results. We provide ongoing support and optimization to help your business scale and dominate its market.",
+    desc: "We deploy the system and monitor performance metrics to ensure it delivers predictable results. We provide ongoing support and optimization to help you scale and dominate your field.",
     needs: "Access to analytics data and performance feedback.",
     receives: "Performance Analytics Report and Scaling Strategy."
   }

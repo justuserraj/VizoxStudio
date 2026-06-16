@@ -28,7 +28,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground mb-4 max-w-sm leading-relaxed">
-              Vizox Studio — Building digital systems that turn businesses into scalable brands.
+              Vizox Studio — Building digital systems that turn ambitious ideas into scalable brands and infrastructures.
             </p>
             <Button asChild variant="outline" className="border-primary/30 hover:bg-primary/10">
               <Link href="/contact">Get in Touch</Link>

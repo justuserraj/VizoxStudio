@@ -17,19 +17,19 @@ const ALL_SERVICES = [
   {
     slug: "brand-foundation",
     title: "Brand Foundation",
-    description: "Establishing visual authority and trust signals that position your business as a market leader, converting visitors into clients.",
+    description: "Establishing visual authority through high-end Graphic Design and trust signals that position you as a leader in your field.",
     icon: Paintbrush,
   },
   {
     slug: "digital-infrastructure",
     title: "Digital Infrastructure",
-    description: "Engineering high-performance, scalable online presences that serve as the rock-solid backbone of your digital growth.",
+    description: "Engineering Websites, Mobile Apps, and Custom Software that serve as the high-performance backbone of your digital growth.",
     icon: Code2,
   },
   {
     slug: "growth-systems",
     title: "Growth Systems",
-    description: "Deploying data-driven, conversion-first strategies that turn traffic into predictable revenue and business results.",
+    description: "Driving ROI through Professional Video Editing and Strategic Social Media Handling that turn interest into predictable results.",
     icon: TrendingUp,
   },
 ];

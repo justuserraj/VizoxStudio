@@ -210,11 +210,11 @@ export const SERVICES_DATA = [
   {
     slug: "brand-foundation",
     title: "Brand Foundation",
-    description: "Establishing visual authority and trust signals.",
-    fullDescription: "With over 5 years of experience in the Indian market, we build brand systems that establish trust instantly and position you as a market leader. Your brand foundation is more than a logo; it's a strategic asset designed to drive conversion.",
+    description: "Establishing visual authority through high-end Graphic Design.",
+    fullDescription: "With over 5 years of experience in the Indian market, we build brand systems and professional Graphic Design assets that establish trust instantly and position you as a market leader. Your brand foundation is a strategic asset designed to drive conversion through visual excellence.",
     process: [
       "Market Discovery & Competitor Analysis",
-      "Visual Identity Strategy",
+      "Strategic Graphic Design & Visual Identity",
       "Psychological Color Mapping",
       "Brand Guidelines Development",
       "Visual Trust Signals Optimization"
@@ -223,24 +223,24 @@ export const SERVICES_DATA = [
   {
     slug: "digital-infrastructure",
     title: "Digital Infrastructure",
-    description: "Engineering high-performance online presences.",
-    fullDescription: "We build digital backbones that are engineered for growth. Using Next.js and high-performance architectures, we ensure your website is fast, secure, and ready to handle scale without compromises.",
+    description: "Engineering Websites, Apps, and Custom Software.",
+    fullDescription: "We build the digital backbone your business needs to scale. From high-performance Websites to Mobile Apps and Custom Software, we ensure your infrastructure is fast, secure, and ready for growth.",
     process: [
-      "High-Performance Architecture Design",
+      "Custom Software & App Architecture",
       "SEO-Engineered Code Structure",
       "Mobile-First Responsive Systems",
       "Secure & Scalable Hosting Setup",
-      "Conversion Pixel & Tracking Integration"
+      "Performance & Load Optimization"
     ]
   },
   {
     slug: "growth-systems",
     title: "Growth Systems",
-    description: "Conversion-first strategies for predictable results.",
-    fullDescription: "Traffic is a vanity metric; conversion is a business metric. We deploy data-driven systems that turn interest into revenue by optimizing every touchpoint of your user journey.",
+    description: "Video Editing and Social Media strategies for ROI.",
+    fullDescription: "Traffic is a vanity metric; conversion is a business metric. We use Professional Video Editing and Strategic Social Media Handling to turn interest into revenue by optimizing every touchpoint of your user journey.",
     process: [
-      "Landing Page Optimization (LPO)",
-      "User Journey Mapping",
+      "Professional Video Content Production",
+      "Social Media Growth Handling",
       "Lead Capture Automation",
       "High-Intent Traffic Strategy",
       "ROI Tracking & Performance Analysis"

@@ -33,13 +33,13 @@ export default function PortfolioPage() {
               transition={{ duration: 0.5 }}
             >
               <span className="px-4 py-1.5 rounded-full glass text-primary text-sm font-medium tracking-wide uppercase mb-6 inline-block">
-                Our Business Impact
+                Our Strategic Impact
               </span>
               <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-8 leading-tight">
                 Selected <span className="text-gradient-3d">Case Studies.</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                A strategic deep dive into how we transform business identities and digital infrastructures for measurable growth.
+                A strategic deep dive into how we transform identities and digital infrastructures for measurable growth.
               </p>
             </motion.div>
           </div>
